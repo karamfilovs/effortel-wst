@@ -15,6 +15,7 @@ public class Item {
     private String quantity_unit;
     private int price_for_quantity;
     private String currency;
+    private double price;
 
 
 

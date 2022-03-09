@@ -17,8 +17,8 @@ public class Invoice {
     public static void main(String[] args) {
         Gson gson  = new GsonBuilder().setPrettyPrinting().create();
         List<Item> items = new ArrayList<>();
-        Item coffee = new Item("Coffee", "kg.", 20, "BGN");
-        Item whiskey = new Item("Whiskey", "lt.", 20, "BGN");
+        Item coffee = new Item("Coffee", "kg.", 20, "BGN", 10);
+        Item whiskey = new Item("Whiskey", "lt.", 20, "BGN", 10);
         items.add(coffee);
         items.add(whiskey);
         Invoice invoice = Invoice.builder()
