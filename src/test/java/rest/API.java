@@ -8,21 +8,22 @@ public class API {
     private String basePath;
     private String token;
 
-    public API (String baseURI, String basePath, String token){
+    public API(String baseURI, String basePath, String token) {
         this.baseURI = baseURI;
         this.basePath = basePath;
         this.token = token;
 
     }
-    public ItemAPI itemAPI(){
-        if (itemAPI == null){
+
+    public ItemAPI itemAPI() {
+        if (itemAPI == null) {
             itemAPI = new ItemAPI(baseURI, basePath, token);
         }
         return itemAPI;
     }
 
-    public ClientAPI clientAPI(){
-        if (clientAPI == null){
+    public ClientAPI clientAPI() {
+        if (clientAPI == null) {
             clientAPI = new ClientAPI(baseURI, basePath, token);
         }
         return clientAPI;

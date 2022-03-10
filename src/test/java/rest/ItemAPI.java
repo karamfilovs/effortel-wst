@@ -1,7 +1,6 @@
 package rest;
 
 import dto.Item;
-import io.restassured.authentication.AuthenticationScheme;
 import io.restassured.response.Response;
 
 public class ItemAPI extends HTTPClient {
@@ -11,24 +10,24 @@ public class ItemAPI extends HTTPClient {
         super(baseUri, basePath, token);
     }
 
-    public  Response getAllItems(){
+    public Response getAllItems() {
         return get(ITEM_URL);
     }
 
-    public  Response getItem(int id){
+    public Response getItem(int id) {
         return get(ITEM_URL + "/" + id);
     }
 
-    public  Response createItem(Item item){
+    public Response createItem(Item item) {
         return post(ITEM_URL, GSON.toJson(item));
     }
 
-    public  Response deleteItem(int id){
+    public Response deleteItem(int id) {
         return delete(ITEM_URL + "/" + id);
     }
 
-    public  Response updateItem(int id, Item item){
-       return put(ITEM_URL + "/" + id, GSON.toJson(item));
+    public Response updateItem(int id, Item item) {
+        return put(ITEM_URL + "/" + id, GSON.toJson(item));
     }
 
 

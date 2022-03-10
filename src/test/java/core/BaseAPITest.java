@@ -1,8 +1,7 @@
 package core;
 
-import dto.LoginToken;
+import dto.LoginCredentials;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import rest.API;
 import rest.LoginAPI;
 
@@ -18,7 +17,7 @@ public class BaseAPITest {
     static void beforeAll(){
         //Obtain token
         LoginAPI loginAPI = new LoginAPI(BASE_URI, BASE_PATH, "");
-        LoginToken loginToken = new LoginToken(EMAIL, PASSWORD, DOMAIN);
+        LoginCredentials loginToken = new LoginCredentials(EMAIL, PASSWORD, DOMAIN);
         String bearerToken  = loginAPI.getToken(loginToken);
         //Configure all API classes
         //Provide access for all tests to the api classes
