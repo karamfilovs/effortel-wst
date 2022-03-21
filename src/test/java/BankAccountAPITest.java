@@ -16,14 +16,14 @@ public class BankAccountAPITest extends BaseAPITest {
 
     @BeforeEach
     void beforeEachTest() {
-
+        Faker faker = new Faker();
         //This is optimization not to repeat the create bank account
         currentBankAccount = BankAccount.builder()
                 .bank(RandomStringUtils.randomAlphabetic(10))
                 .bank_en(RandomStringUtils.randomAlphabetic(10))
                 .currency("EUR")
                 .alias("Delete Bank Account Alias")
-                .iban("BG96BNPA94405512582615")
+                .iban(faker.finance().iban())
                 .bic("STSABGSF")
                 .build();
         Response createResp = api.bankAccountAPI().createBankAccount(currentBankAccount);
