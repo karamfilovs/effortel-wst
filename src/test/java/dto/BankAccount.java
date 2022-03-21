@@ -19,5 +19,5 @@ public class BankAccount {
     private String currency;
     private String address;
     @Expose(serialize = false, deserialize = true)
-    private boolean deleted;
+    private transient boolean deleted;
 }
