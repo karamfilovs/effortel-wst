@@ -1,12 +1,10 @@
 import core.BaseAPITest;
 import dto.Item;
-import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import rest.ItemAPI;
 
 import java.time.LocalDateTime;
 

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import rest.ItemAPIScheme;
+import rest.ItemAPI;
 
 public class BasicAuthTest {
     @Test
@@ -15,7 +15,7 @@ public class BasicAuthTest {
         PreemptiveBasicAuthScheme basicAuthScheme = new PreemptiveBasicAuthScheme(); //Basic auth scheme
         basicAuthScheme.setUserName("karamfilovs@gmail.com"); //Setting email
         basicAuthScheme.setPassword("123456"); //Setting password
-        ItemAPIScheme itemAPIScheme = new ItemAPIScheme("https://st2016.inv.bg", "RESTapi", basicAuthScheme); //Instance for v2 of the api
+        ItemAPI itemAPIScheme = new ItemAPI("https://st2016.inv.bg", "RESTapi", basicAuthScheme); //Instance for v2 of the api
         Response response = itemAPIScheme.getAllItems(); //Get all items
         Assertions.assertEquals(200, response.statusCode()); //Check the response status code
     }

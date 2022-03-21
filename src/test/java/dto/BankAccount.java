@@ -1,8 +1,19 @@
 package dto;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Builder
+@Getter
+@Setter
 public class BankAccount {
-    //TODO: Homework
-    //https://api.inv.bg/v3/swagger-ui/#/bank/postBankAccount
-    //Next week will be skipped
-    //21.03 Last lecture
+    private String id;
+    private String bank_en;
+    private String alias;
+    private String bank;
+    private String iban;
+    private String bic;
+    private String currency;
+    private String address;
 }
