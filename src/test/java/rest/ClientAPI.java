@@ -1,15 +1,16 @@
 package rest;
 
 import dto.Client;
+import io.restassured.authentication.AuthenticationScheme;
 import io.restassured.response.Response;
 
-public class ClientAPI extends HTTPClient {
+public class ClientAPI extends HTTPClientScheme {
     private static final String CLIENT_URL = "/clients";
 
-
-    public ClientAPI(String baseUri, String basePath, String token) {
-        super(baseUri, basePath, token);
+    public ClientAPI(String baseUri, String basePath, AuthenticationScheme scheme) {
+        super(baseUri, basePath, scheme);
     }
+
 
     public Response createClient(Client client){
         return post(CLIENT_URL, GSON.toJson(client));

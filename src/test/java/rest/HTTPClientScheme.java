@@ -8,6 +8,9 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class HTTPClientScheme {
     protected final Gson GSON = new GsonBuilder()
             .setPrettyPrinting()
@@ -46,6 +49,19 @@ public class HTTPClientScheme {
     protected Response put(String url, String body) {
         return baseRequest().body(body)
                 .put(url)
+                .prettyPeek();
+    }
+
+    protected Response patch(String url, String body) {
+        return baseRequest().body(body)
+                .patch(url)
+                .prettyPeek();
+    }
+
+    protected Response patch(String url, Map<String, String> queryParams) {
+        return baseRequest()
+                .queryParams(queryParams)
+                .patch(url)
                 .prettyPeek();
     }
 }
