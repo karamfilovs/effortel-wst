@@ -1,12 +1,10 @@
 import core.BaseAPITest;
 import dto.Client;
-import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import rest.ClientAPI;
 
 import java.time.LocalDateTime;
 
@@ -18,7 +16,7 @@ public class ClientAPITest extends BaseAPITest {
     @Tag("smoke")
     @Tag("positive")
     @DisplayName("Can create client")
-    void canCreateClient(){
+    void canCreateClient() {
         Client client = Client.builder()
                 .name("Happy" + LocalDateTime.now())
                 .address("Sofia")
