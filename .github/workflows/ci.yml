@@ -59,10 +59,10 @@ jobs:
           cache: maven
       - name: Execute all SOAP tests
         run: mvn clean test -Dgroups=soap --file pom.xml
-      - name: Test Reporter UI
+      - name: Test Reporter SOAP
         uses: dorny/test-reporter@v1.4.3
         if: always()
         with:
-          name: junit execution report ui
+          name: junit execution report soap
           path: "**/surefire-reports/TEST-*.xml"
           reporter: java-junit
