@@ -42,7 +42,7 @@ public class SOAPCalculatorTest {
 
     @Test
     @Tag("soap")
-    @DisplayName("Can substract numbers")
+    @DisplayName("Can subtract numbers")
     void canSubtractNumbers() throws ServiceException, RemoteException {
         int result = locator.getCalculatorSoap12()
                 .subtract(3, 3);

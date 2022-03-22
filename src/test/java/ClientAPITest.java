@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 public class ClientAPITest extends BaseAPITest {
 
     @Test
-    @Tag("only")
     @Tag("smoke")
     @Tag("positive")
     @DisplayName("Can create client")
